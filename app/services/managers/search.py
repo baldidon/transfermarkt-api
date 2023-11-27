@@ -42,6 +42,7 @@ class TransfermarktManagerSearch(TransfermarktBase):
         club_id = [
             safe_regex(img, REGEX_CHART_CLUB_ID, "club_id") for img in self.get_list_by_xpath(Managers.Search.CLUB_IMAGE)
         ]
+        contract = self.get_list_by_xpath(Managers.Search.CONTRACT)
         age = self.get_list_by_xpath(Managers.Search.AGE)
         nationality = self.get_list_by_xpath(Managers.Search.NATIONALITY)
         function = self.get_list_by_xpath(Managers.Search.FUNCTION)
@@ -50,21 +51,23 @@ class TransfermarktManagerSearch(TransfermarktBase):
             {
                 "id": idx,
                 "name": name,
+                "age": age,
+                "nationality": nationality,
                 "club": {
                     "id": club_id,
                     "name": club_name,
                 },
-                "age": age,
-                "nationality": nationality,
+                "contract": contract,
                 "function": function,
             } 
         for idx,
             name,
-            club_id,
-            club_name,
             age, 
             nationality,
-            function in zip(idx, name, club_id, club_name, age, nationality, function)
+            club_id,
+            club_name,
+            contract,
+            function in zip(idx, name, age, nationality, club_id, club_name, contract, function)
         ]
 
 
