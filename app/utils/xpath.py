@@ -87,7 +87,7 @@ class Managers:
         DESCRIPTION = "//meta[@name='description']//@content"
         IMAGE_URL = "//div[@id='fotoauswahlOeffnen']//img//@src"
         CURRENT_CLUB_NAME = "//span[@class='data-header__club']//text()"
-        CURRENT_CLUB_URL = "//span[@class='data-header__club']//a//@href"
+        CURRENT_CLUB_URL = "// div[@class='data-header__box--big']//a[2]//@href"
         CURRENT_CLUB_APPOINTED = "//span[contains(text(),'Appointed')]//span//text()"
         CURRENT_CLUB_CONTRACT_EXPIRES = "//span[contains(text(),'Contract until')]//span//text()"
         FULL_NAME = "//th[text()='Full name:']//following::span[1]//text()"
@@ -95,6 +95,7 @@ class Managers:
         PLACE_OF_BIRTH_CITY = "//th[text()='Place of Birth:']/following-sibling::td//span//text()"
         PLACE_OF_BIRTH_COUNTRY = "//th[text()='Place of Birth:']/following-sibling::td//span//img//@title"
         CITIZENSHIP = "//th[text()='Citizenship:']/following-sibling::td//img//@title"
+        AGE = "//th[text()='Age:']/following-sibling::td//text()"
         AVG_TERM_AS_MANAGER = "//th[text()='Avg. term as coach:']/following-sibling::td//text()" # unit: years
         LICENCE = "//th[text()='Coaching Licence:']/following-sibling::td//text()"
         PREFERRED_FORMATION = "//th[text()='Preferred formation:']/following-sibling::td//text()"
