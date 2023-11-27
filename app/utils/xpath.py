@@ -65,6 +65,56 @@ class Players:
         DATA = ".//text()"
 
 
+class Managers:
+    class Search: 
+        BASE = "//div[@class='box'][h2[contains(text(), 'officials')]]"
+        FUNCTION = BASE + "//td[@class='rechts'][1]//text()" # after search, parsing!
+        NAME = BASE + "//td[@class='hauptlink']//a//@title"
+        URL = BASE + "//td[@class='hauptlink']//a//@href"
+        NATIONALITY = BASE + "//td[@class='zentriert'][3]//img//@title"
+        CLUB_NAME = BASE + "//td[@class='zentriert']//img//@title"
+        CLUB_IMAGE = BASE +"//td[@class='zentriert']//img//@src"
+        AGE = BASE + "//td[@class='zentriert'][2]//text()"
+        CONTRACT = BASE + "//td[@class='rechts'][2]//text()"
+        FOUND = "//text()"
+
+    class Profile:
+        ID = "//div[@data-action='profil']//@data-id"
+        URL = "//a[@class='tm-subnav-item megamenu']//@href"
+        NAME = "//h1[@class='data-header__headline-wrapper']//strong//text()"
+        NAME_IN_HOME_COUNTRY = "//th[contains(text(),'Name in Home Country')]/following-sibling::td//text()"
+        FULL_NAME = "//th[contains(text(),'Full name')]/following-sibling::td//text()"
+        DESCRIPTION = "//meta[@name='description']//@content"
+        IMAGE_URL = "//div[@id='fotoauswahlOeffnen']//img//@src"
+        CURRENT_CLUB_NAME = "//span[@class='data-header__club']//text()"
+        CURRENT_CLUB_URL = "//span[@class='data-header__club']//a//@href"
+        CURRENT_CLUB_APPOINTED = "//span[contains(text(),'Appointed')]//span//text()"
+        CURRENT_CLUB_CONTRACT_EXPIRES = "//span[contains(text(),'Contract until')]//span//text()"
+        FULL_NAME = "//th[text()='Full name:']//following::span[1]//text()"
+        DATE_OF_BIRTH = "//th[text()='Date of Birth:']/following-sibling::td//text()"
+        PLACE_OF_BIRTH_CITY = "//th[text()='Place of Birth:']/following-sibling::td//span//text()"
+        PLACE_OF_BIRTH_COUNTRY = "//th[text()='Place of Birth:']/following-sibling::td//span//img//@title"
+        CITIZENSHIP = "//th[text()='Citizenship:']/following-sibling::td//img//@title"
+        AVG_TERM_AS_MANAGER = "//th[text()='Avg. term as coach:']/following-sibling::td//text()" # unit: years
+        LICENCE = "//th[text()='Coaching Licence:']/following-sibling::td//text()"
+        PREFERRED_FORMATION = "//th[text()='Preferred formation:']/following-sibling::td//text()"
+    
+    class Clubs:
+        # not fully stats
+        BASE = "//div[@class='box'][h2[normalize-space()='History']]"
+        CLUB_NAME = BASE + "//td[@class='zentriert no-border-rechts']//a//img//@title"
+        CLUB_IMAGE = BASE + "//td[@class='zentriert']//a//img//@src"
+        APPOINTED = BASE + "//td[@class='zentriert'][1]//text()"
+        IN_CHARGE_UNTIL = BASE + "//td[@class='zentriert'][2]//i//text()"
+        MATCHES = BASE + "//td[@class='zentriert'][3]//a//text()"
+        PPM = BASE + "//td[@class='rechts']//text()"
+    
+    class Stats:
+        ROWS = "//table[@class='items']//tbody//tr"
+        HEADERS = "//table[@class='items']//thead//tr//@title"
+        COMPETITIONS_URLS = "//table[@class='items']//td[@class='hauptlink no-border-links']//a//@href"
+        DATA = ".//text()"
+
 class Clubs:
     class Profile:
         URL = "//div[@class='datenfakten-wappen']//@href"
