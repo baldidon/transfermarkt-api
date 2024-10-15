@@ -2,7 +2,7 @@
 
 This project provides a lightweight and easy-to-use interface for extracting data from [Transfermarkt](https://www.transfermarkt.com/) 
 by applying web scraping processes and offering a RESTful API service via FastAPI. With this service, developers can 
-seamlessly integrate Transfermarkt data into their applications, websites, or data analysis pipelines.
+seamlessly integrate Transfermarkt data into their applications, websites, or data analysis pipelines!
 
 ### API Swagger
 https://transfermarkt-api.vercel.app/
